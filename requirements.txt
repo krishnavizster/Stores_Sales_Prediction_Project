@@ -1,4 +1,3 @@
 Flask
-Numpy
-Pandas
-scikit 
+ gunicorn
+ 

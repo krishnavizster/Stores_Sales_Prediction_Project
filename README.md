@@ -13,4 +13,35 @@ conda activate mlenv2/ #for command gitbash
 #to create Flask app
 pip install-r requirements.txt
 
+#to create new environment
+......
+conda create -p./mlenv3
+.....
+#to activate new environment
+.......
+conda activate ./mlenv3
+......
+#connecting to Heruku 
+heruku id : krishnavizster@gmail.com
+heruku API key : 58541924-4bb6-43e0-8dbf-a9020aa4fccc
+heruku app name:storesalespredectionformall
 
+
+#Build Docker Image 
+....
+docker build -t <image_name>:<tagname>.
+....
+#Note: Image name for Docker must be lower case 
+#to list create Docker images
+docker images 
+# run docker images
+dicker run -p 5000:5000 -e PORT=5000 f8c749e73678 
+ #to stop docker container
+ .....
+ docker stop <container_id> #like docker stop e9c3 
+ .....
+
+ #to check running container in docker 
+ .....
+ docker ps
+ ..... 
