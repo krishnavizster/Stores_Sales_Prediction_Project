@@ -23,7 +23,7 @@ conda activate ./mlenv3
 ......
 #connecting to Heruku 
 heruku id : krishnavizster@gmail.com
-heruku API key : 58541924-4bb6-43e0-8dbf-a9020aa4fccc
+heruku API key : <enter_keyfromheroku>
 heruku app name:storesalespredectionformall
 
 
