@@ -1,46 +1,26 @@
+from setuptools import setup, find_packages
+
+REQUIREMENT_FILE_NAME = "requirements.txt"
+REMOVE_PACKAGE = "-e ."
 
 
-from setuptools import setup,find_packages
-from typing import List
-
-import storessales
-
-
-
-#Declaring variables
-PROJECT_NAME='stores-sales-predictor'
-VERSION='0.0.2'
-AUTHOR='Krishna Kumar'
-DESCRIPTION='this is the store sales predector project for shoping malls'
-PACKAGES=['storessales']
-REQUIREMENT_FILE_NAME='requirements.txt'
-
-
-def get_requirements_list()->List[str]:
-
-    """
-    Description: this function is going to return a list of requirements
-    mentioned in requirements.txt file and
-
-    return this function is going to return a list which cinntain name 
-    of libraries in requirements.txt file"""
-
-    with open(REQUIREMENT_FILE_NAME) as requirement_file:
-        return requirement_file.readlines().remove("-e .")
-
-
+def get_requirement_list(requirement_file_name=REQUIREMENT_FILE_NAME) -> list:
+    try:
+        requirement_list = None
+        with open(requirement_file_name) as requirement_file:
+            requirement_list = [requirement.replace("\n", "") for requirement in requirement_file]
+            requirement_list.remove(REMOVE_PACKAGE)
+        return requirement_list
+    except Exception as e:
+        raise e
 
 
 setup(
-name=PROJECT_NAME,
-verssion=VERSION,
-author=AUTHOR,
-description=DESCRIPTION,
-packages= find_packages(),
-install_requires=get_requirements_list()
+    name="stores-sales-predictor",
+    license="MIT",
+    version="0.0.1",
+    description="stores sales predector for malls and supermarkets.",
+    author="krishna kumar",
+    packages=find_packages(),
+    install_requires=get_requirement_list()
 )
-
-
-#to chek wehther it is working or not 
-if __name__=='__main__':
-    print(get_requirements_list())
