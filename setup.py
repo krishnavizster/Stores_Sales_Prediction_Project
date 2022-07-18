@@ -1,6 +1,6 @@
 
-import re
-from setuptools import setup
+
+from setuptools import setup,find_packages
 from typing import List
 
 import storessales
@@ -9,7 +9,7 @@ import storessales
 
 #Declaring variables
 PROJECT_NAME='stores-sales-predictor'
-VERSION='0.0.1'
+VERSION='0.0.2'
 AUTHOR='Krishna Kumar'
 DESCRIPTION='this is the store sales predector project for shoping malls'
 PACKAGES=['storessales']
@@ -26,7 +26,7 @@ def get_requirements_list()->List[str]:
     of libraries in requirements.txt file"""
 
     with open(REQUIREMENT_FILE_NAME) as requirement_file:
-        return requirement_file.readlines()
+        return requirement_file.readlines().remove("-e .")
 
 
 
@@ -36,7 +36,7 @@ name=PROJECT_NAME,
 verssion=VERSION,
 author=AUTHOR,
 description=DESCRIPTION,
-packages= PACKAGES,
+packages= find_packages(),
 install_requires=get_requirements_list()
 )
 
