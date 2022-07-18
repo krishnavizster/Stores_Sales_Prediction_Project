@@ -5,7 +5,7 @@ app=Flask(__name__)
 
 @app.route("/",methods=['GET','POST'])
 def index():
-    return "store sales predection"
+    return "CI CD pipeline has been established for store sales predection"
 
 if __name__ == '__main__':
     app.run(debug=True)
