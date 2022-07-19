@@ -18,7 +18,7 @@ def get_requirement_list(requirement_file_name=REQUIREMENT_FILE_NAME) -> list:
 setup(
     name="stores-sales-predictor",
     license="MIT",
-    version="0.0.1",
+    version="0.0.2",
     description="stores sales predector for malls and supermarkets.",
     author="krishna kumar",
     packages=find_packages(),
