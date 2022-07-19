@@ -1,9 +1,0 @@
-LICENSE
-README.md
-setup.py
-storessales/__init__.py
-storessales.egg-info/PKG-INFO
-storessales.egg-info/SOURCES.txt
-storessales.egg-info/dependency_links.txt
-storessales.egg-info/requires.txt
-storessales.egg-info/top_level.txt
