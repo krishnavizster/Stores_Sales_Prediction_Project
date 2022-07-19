@@ -1,26 +1,36 @@
-from setuptools import setup, find_packages
+from setuptools import setup,find_packages
+from typing import List
 
-REQUIREMENT_FILE_NAME = "requirements.txt"
-REMOVE_PACKAGE = "-e ."
+#Declaring variables for setup functions
+PROJECT_NAME="Stores-sales-predictor"
+VERSION="0.0.1"
+AUTHOR="krishna kumar"
+DESRCIPTION="This project will predict the sales of each stores in mall"
+
+REQUIREMENT_FILE_NAME="requirements.txt"
 
 
-def get_requirement_list(requirement_file_name=REQUIREMENT_FILE_NAME) -> list:
-    try:
-        requirement_list = None
-        with open(requirement_file_name) as requirement_file:
-            requirement_list = [requirement.replace("\n", "") for requirement in requirement_file]
-            requirement_list.remove(REMOVE_PACKAGE)
-        return requirement_list
-    except Exception as e:
-        raise e
+
+
+def get_requirements_list() -> List[str]:
+    """
+    ["numpy","pandas"]
+    Description: This function is going to return list of requirement
+    mention in requirements.txt file
+    return This function is going to return a list which contain name
+    of libraries mentioned in requirements.txt file
+    """
+    with open(REQUIREMENT_FILE_NAME) as requirement_file:
+        
+        return requirement_file.readlines().remove("-e .")
+
 
 
 setup(
-    name="stores-sales-predictor",
-    license="MIT",
-    version="0.0.2",
-    description="stores sales predector for malls and supermarkets.",
-    author="krishna kumar",
-    packages=find_packages(),
-    install_requires=get_requirement_list()
+name=PROJECT_NAME,
+version=VERSION,
+author=AUTHOR,
+description=DESRCIPTION,
+packages=find_packages(), 
+install_requires=get_requirements_list()
 )
