@@ -2,27 +2,29 @@ from setuptools import setup,find_packages
 from typing import List
 
 #Declaring variables for setup functions
-PROJECT_NAME="Stores-sales-predictor"
-VERSION="0.0.1"
+PROJECT_NAME="stores-sales-predictor"
+VERSION="0.0.3"
 AUTHOR="krishna kumar"
-DESRCIPTION="This project will predict the sales of each stores in mall"
+DESRCIPTION="This will show sales predictions"
 
 REQUIREMENT_FILE_NAME="requirements.txt"
 
-
+HYPHEN_E_DOT = "-e ."
 
 
 def get_requirements_list() -> List[str]:
     """
-    ["numpy","pandas"]
     Description: This function is going to return list of requirement
     mention in requirements.txt file
     return This function is going to return a list which contain name
     of libraries mentioned in requirements.txt file
     """
     with open(REQUIREMENT_FILE_NAME) as requirement_file:
-        
-        return requirement_file.readlines().remove("-e .")
+        requirement_list = requirement_file.readlines()
+        requirement_list = [requirement_name.replace("\n", "") for requirement_name in requirement_list]
+        if HYPHEN_E_DOT in requirement_list:
+            requirement_list.remove(HYPHEN_E_DOT)
+        return requirement_list
 
 
 
