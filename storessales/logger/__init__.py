@@ -2,9 +2,9 @@ import logging
 from datetime import datetime
 import os
 
+LOG_DIR="app.log"
 
 
-LOG_DIR="storessales_logs"
 
 CURRENT_TIME_STAMP=F"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
